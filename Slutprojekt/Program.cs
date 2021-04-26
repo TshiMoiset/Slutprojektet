@@ -6,7 +6,9 @@ namespace Slutprojekt
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            int[,] layout = new int[300, 300]; // Jag har en 2 dimisionel array (grid).
+
+
         }
     }
 }
