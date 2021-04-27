@@ -6,7 +6,9 @@ namespace Slutprojekt
     {
         static void Main(string[] args)
         {
-            int[,] layout = new int[300, 300]; // Jag har en 2 dimisionel array (grid).
+            int[,] layout = new int[20, 20]; // Jag har en 2 dimensionell array (grid).
+
+            Console.ReadLine();
 
 
         }
