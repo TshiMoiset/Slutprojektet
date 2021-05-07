@@ -17,7 +17,7 @@ namespace Slutprojekt
             {
                 Console.WriteLine();
                 Console.WriteLine("Välj ett alternativ!");
-                Console.WriteLine("1. Spela 21:an");
+                Console.WriteLine("1. Starta spel");
                 Console.WriteLine("2. Spelets regler");
                 Console.WriteLine("3. Avsluta programmet");
                 Console.ForegroundColor = ConsoleColor.Magenta;
@@ -99,7 +99,25 @@ namespace Slutprojekt
                 cardChoises = Console.ReadLine();
                 Console.ForegroundColor = ConsoleColor.Yellow;
 
+                switch (cardChoises)
+                {
+                    case "j":
+                        int newPoint = random.Next(1, 10);
+                        playerPoints += newPoint;
+                        Console.WriteLine();
+                        Console.WriteLine($"Ditt nya kort är värt {newPoint} poäng");
+                        break;
 
+                    case "n":
+                        break;
+
+                    default:
+                        Console.WriteLine();
+                        setWritelineColor("ERROR!!!", ConsoleColor.Red);
+                        Console.WriteLine("Du har inte valt någon av alternativen (j) eller (n)");
+                        Console.ForegroundColor = ConsoleColor.Yellow;
+                        break;
+                }
             }
 
             Console.ReadLine();
