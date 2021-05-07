@@ -38,6 +38,7 @@ namespace Slutprojekt
 
                 Console.WriteLine();
 
+                // Använder mig av en switch istället för flera "if"
                 switch (menuChoisesString)
                 {
                     case "1":
