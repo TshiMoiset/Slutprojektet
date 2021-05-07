@@ -43,6 +43,7 @@ namespace Slutprojekt
                 {
                     case "1":
                         startGame();
+                        Console.Clear();
                         break;
 
                     case "2":
