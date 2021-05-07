@@ -88,7 +88,7 @@ namespace Slutprojekt
 
             string cardChoises = "";
 
-            while (cardChoises != "n" && playerPoints <= 21)
+            while (cardChoises != "n" && playerPoints <= 21 && aiPoints <= 21)
             {
                 setWritelineColor($"Din poäng: {playerPoints}", ConsoleColor.Blue);
                 setWritelineColor($"Datorns poäng: {aiPoints}", ConsoleColor.DarkMagenta);
@@ -103,10 +103,15 @@ namespace Slutprojekt
                 switch (cardChoises)
                 {
                     case "j":
-                        int newPoint = random.Next(1, 10);
+                        int newPoint = random.Next(1, 14);
                         playerPoints += newPoint;
                         Console.WriteLine();
                         Console.WriteLine($"Ditt nya kort är värt {newPoint} poäng");
+
+                        int aiNewPoints = random.Next(1, 14);
+                        aiPoints += aiNewPoints;
+                        Console.WriteLine($"Datorns kort är värt {aiNewPoints}");
+
                         break;
 
                     case "n":
@@ -121,39 +126,28 @@ namespace Slutprojekt
                 }
             }
 
+            // Undersök vem som vann
+            Console.WriteLine();
+            setWritelineColor($"Din poäng: {playerPoints}", ConsoleColor.Blue);
+            setWritelineColor($"Datorns poäng: {aiPoints}", ConsoleColor.DarkMagenta);
+            Console.WriteLine();
+
             if (playerPoints > 21)
             {
                 setWritelineColor("Du har mer än 21 och har förlorat :(", ConsoleColor.Red);
                 Console.WriteLine("Bra försök!!");
-                //break;
             }
-
-            while (aiPoints < playerPoints && aiPoints <= 21)
-            {
-                int aiNewPoints = random.Next(1, 14);
-                aiPoints += aiNewPoints;
-                Console.WriteLine($"Datorn drog ett kort värt {aiNewPoints}");
-            }
-
-            Console.WriteLine();
-            Console.WriteLine($"Din poäng: {playerPoints}");
-            Console.WriteLine($"Datorns poäng: {aiPoints}");
-
-            // Undersök vem som vann
-            if (aiPoints > 21)
+            else if (aiPoints > 21)
             {
                 setWritelineColor("Du har vunnit", ConsoleColor.Green);
                 Console.WriteLine("Grattis :)");
             }
-
             else if (aiPoints == playerPoints)
             {
                 setWritelineColor("Ingen vann! BRA KÄMPAT", ConsoleColor.Cyan);
             }
-
             else
             {
-                Console.WriteLine();
                 setWritelineColor("Datorn har vunnit", ConsoleColor.Red);
                 Console.WriteLine("Bättre lycka nästa gång :)");
             }
