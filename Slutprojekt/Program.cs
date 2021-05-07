@@ -27,9 +27,6 @@ namespace Slutprojekt
                 {
                     Console.WriteLine();
                     setWritelineColor("Det där är inte ett giltigt svar. Försök igen!", ConsoleColor.Red);
-
-                    /*Console.ForegroundColor = ConsoleColor.Cyan;
-                    Console.Write("Ok, Jag väljer då: ");*/
                     setWritelineColor("Ok, Jag väljer då: ", ConsoleColor.Cyan);
 
                     Console.ForegroundColor = ConsoleColor.Magenta;
@@ -62,9 +59,6 @@ namespace Slutprojekt
                         Environment.Exit(0);
                         break;
                     default:
-
-                        /*Console.ForegroundColor = ConsoleColor.Red;
-                        Console.WriteLine("ERROR!!!");*/
                         setWritelineColor("ERROR!!!", ConsoleColor.Red);
                         Console.WriteLine("Du har inte valt någon av alternativen 1 - 3!");
                         Console.ForegroundColor = ConsoleColor.Yellow;
