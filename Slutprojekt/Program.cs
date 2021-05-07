@@ -20,22 +20,20 @@ namespace Slutprojekt
                 Console.WriteLine("1. Spela 21:an");
                 Console.WriteLine("2. Spelets regler");
                 Console.WriteLine("3. Avsluta programmet");
-
-
                 Console.ForegroundColor = ConsoleColor.Magenta;
                 menuChoisesString = Console.ReadLine();
 
                 while (!int.TryParse(menuChoisesString, out menuChoises))       // Koden gör att den inte krashar om anvädaren inte följer instruktionerna.
                 {
                     Console.WriteLine();
-                    Console.ForegroundColor = ConsoleColor.Red;
-                    Console.WriteLine("Det där är inte ett giltigt svar. Försök igen!");
+                    setWritelineColor("Det där är inte ett giltigt svar. Försök igen!", ConsoleColor.Red);
 
-                    Console.ForegroundColor = ConsoleColor.Cyan;
-                    Console.Write("Ok, Jag väljer då: ");
+                    /*Console.ForegroundColor = ConsoleColor.Cyan;
+                    Console.Write("Ok, Jag väljer då: ");*/
+                    setWritelineColor("Ok, Jag väljer då: ", ConsoleColor.Cyan);
+
                     Console.ForegroundColor = ConsoleColor.Magenta;
                     menuChoisesString = Console.ReadLine();
-                    Console.ForegroundColor = ConsoleColor.Yellow;
                 }
 
                 Console.WriteLine();
@@ -63,8 +61,9 @@ namespace Slutprojekt
                         break;
                     default:
 
-                        Console.ForegroundColor = ConsoleColor.Red;
-                        Console.WriteLine("ERROR!!!");
+                        /*Console.ForegroundColor = ConsoleColor.Red;
+                        Console.WriteLine("ERROR!!!");*/
+                        setWritelineColor("ERROR!!!", ConsoleColor.Red);
                         Console.WriteLine("Du har inte valt någon av alternativen 1 - 3!");
                         Console.ForegroundColor = ConsoleColor.Yellow;
                         break;
@@ -80,6 +79,7 @@ namespace Slutprojekt
             int playerPoints = 0;
             Random random = new Random();
 
+            Console.ForegroundColor = ConsoleColor.Yellow;
             Console.WriteLine("Nu kommer två kort dras per spelare");
             aiPoints += random.Next(1, 11);
             playerPoints += random.Next(1, 11);
@@ -95,6 +95,12 @@ namespace Slutprojekt
             }
 
             Console.ReadLine();
+        }
+
+        public static void setWritelineColor(string txt, ConsoleColor color)
+        {
+            Console.ForegroundColor = color;
+            Console.WriteLine(txt);
         }
     }
 }
