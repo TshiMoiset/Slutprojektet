@@ -47,11 +47,19 @@ namespace Slutprojekt
                         break;
 
                     case "2":
-                        Console.WriteLine($"Work in progress.........");
+                        Console.ForegroundColor = ConsoleColor.DarkYellow;
+                        Console.WriteLine("Ditt mål är att tvinga datorn att få mer än 21 poäng.");
+                        Console.WriteLine("Du får poäng genom att dra kort, varje kort har 1-10 poäng.");
+                        Console.WriteLine("Om du får mer än 21 poäng har du förlorat.");
+                        Console.WriteLine("Både du och datorn får två kort i början. Därefter får du");
+                        Console.WriteLine("dra fler kort tills du är nöjd eller får över 21.");
+                        Console.WriteLine("När du är färdig drar datorn kort till den har");
+                        Console.WriteLine("mer poäng än dig eller över 21 poäng.");
+                        Console.ForegroundColor = ConsoleColor.Yellow;
                         break;
 
                     case "3":
-                        Console.WriteLine($"Work in progress.........");
+                        Environment.Exit(0);
                         break;
                     default:
 
