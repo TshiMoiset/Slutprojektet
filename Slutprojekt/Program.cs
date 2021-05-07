@@ -82,17 +82,24 @@ namespace Slutprojekt
 
             Console.ForegroundColor = ConsoleColor.Yellow;
             Console.WriteLine("Nu kommer två kort dras per spelare");
-            aiPoints += random.Next(1, 11);
-            playerPoints += random.Next(1, 11);
+            aiPoints += random.Next(1, 14);
+            playerPoints += random.Next(1, 14);
 
             string cardChoises = "";
 
             while (cardChoises != "n" && playerPoints <= 21)
             {
-                Console.WriteLine($"Din poäng: {playerPoints}");
-                Console.WriteLine($"Datorns poäng: {aiPoints}");
+                setWritelineColor($"Din poäng: {playerPoints}", ConsoleColor.Blue);
+                setWritelineColor($"Datorns poäng: {aiPoints}", ConsoleColor.DarkMagenta);
+                Console.WriteLine();
+                setWritelineColor($"Svara med j (Ja) eller n (nej)", ConsoleColor.Yellow);
                 Console.WriteLine("Vill du ha ett till kort? (j/n)");
+
+                Console.ForegroundColor = ConsoleColor.Magenta;
                 cardChoises = Console.ReadLine();
+                Console.ForegroundColor = ConsoleColor.Yellow;
+
+
             }
 
             Console.ReadLine();
