@@ -120,6 +120,47 @@ namespace Slutprojekt
                 }
             }
 
+            if (playerPoints > 21)
+            {
+                setWritelineColor("Du har mer än 21 och har förlorat :(", ConsoleColor.Red);
+                Console.WriteLine("Bra försök!!");
+                //break;
+            }
+
+            while (aiPoints < playerPoints && aiPoints <= 21)
+            {
+                int aiNewPoints = random.Next(1, 14);
+                aiPoints += aiNewPoints;
+                Console.WriteLine($"Datorn drog ett kort värt {aiNewPoints}");
+            }
+
+            Console.WriteLine();
+            Console.WriteLine($"Din poäng: {playerPoints}");
+            Console.WriteLine($"Datorns poäng: {aiPoints}");
+
+            // Undersök vem som vann
+            if (aiPoints > 21)
+            {
+                setWritelineColor("Du har vunnit", ConsoleColor.Green);
+                Console.WriteLine("Grattis :)");
+            }
+
+            else if (aiPoints == playerPoints)
+            {
+                setWritelineColor("Ingen vann! BRA KÄMPAT", ConsoleColor.Cyan);
+            }
+
+            else
+            {
+                Console.WriteLine();
+                setWritelineColor("Datorn har vunnit", ConsoleColor.Red);
+                Console.WriteLine("Bättre lycka nästa gång :)");
+            }
+
+            Console.WriteLine();
+            setWritelineColor("Tryck på [ENTER] för att gå till menyn :)", ConsoleColor.Green);
+            Console.ForegroundColor = ConsoleColor.Yellow;
+
             Console.ReadLine();
         }
 
