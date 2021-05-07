@@ -17,7 +17,7 @@ namespace Slutprojekt
             while (menuChoises != 3) // Innehållet som finns i menyn.
             {
                 Console.WriteLine();
-                Console.WriteLine("Välj ett alternativ");
+                Console.WriteLine("Välj ett alternativ!");
                 Console.WriteLine("1. Spela 21:an");
                 Console.WriteLine("2. Spelets regler");
                 Console.WriteLine("3. Avsluta programmet");
